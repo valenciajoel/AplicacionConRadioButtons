@@ -7,22 +7,27 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.lang.reflect.Array;
 
 public class MainActivity extends AppCompatActivity {
 
     private EditText et1,et2;
     private TextView tv1;
-    private RadioButton rb1, rb2;
+    private RadioButton rb1, rb2, rb3, rb4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        et1= (EditText) findViewById(R.id.txt_valor1);
-        et2= (EditText) findViewById(R.id.txt_valor2);
-        tv1= (TextView) findViewById(R.id.txt_resultado);
-        rb1= (RadioButton) findViewById(R.id.rb_sumar);
-        rb2= (RadioButton) findViewById(R.id.rb_restar);
+        et1= findViewById(R.id.txt_valor1);
+        et2= findViewById(R.id.txt_valor2);
+        tv1= findViewById(R.id.txt_resultado);
+        rb1= findViewById(R.id.rb_sumar);
+        rb2= findViewById(R.id.rb_restar);
+        rb3 = findViewById(R.id.rb_multiplicar);
+        rb4= findViewById(R.id.rb_dividir);
 
     }
 
@@ -38,6 +43,17 @@ public class MainActivity extends AppCompatActivity {
         }else if(rb2.isChecked()){
             int resta = valor1 - valor2;
             tv1.setText(String.valueOf(resta));
+        }else if(rb3.isChecked()){
+            int resta = valor1 * valor2;
+            tv1.setText(String.valueOf(resta));
+        }else if(rb4.isChecked()){
+
+            if(valor2 == 0){
+                Toast.makeText(this, "No se puede dividir entre 0 ", Toast.LENGTH_SHORT).show();
+            }else {
+                int division = valor1 / valor2;
+                tv1.setText(String.valueOf(division));
+            }
         }
     }
 }
