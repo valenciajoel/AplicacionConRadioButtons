@@ -64,6 +64,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="76dp"
+        android:onClick="Calcular"
         android:text="@string/Button"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
