@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         spinner = findViewById(R.id.spinner);
         operacion = new Operacion();
         String [] operaciones = operacion.getOperadores();
-        ArrayAdapter <String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, operaciones);
+        ArrayAdapter <String> adapter = new ArrayAdapter<String>(this, R.layout.spinner_item_operaciones, operaciones);
 
         spinner.setAdapter(adapter);
     }
